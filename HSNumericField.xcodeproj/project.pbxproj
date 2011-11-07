@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC4BF99A1467B4C5002BBD35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4BF9991467B4C5002BBD35 /* UIKit.framework */; };
+		BC4BF99C1467B4C5002BBD35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4BF99B1467B4C5002BBD35 /* Foundation.framework */; };
+		BC4BF99E1467B4C5002BBD35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4BF99D1467B4C5002BBD35 /* CoreGraphics.framework */; };
+		BC4BF9A41467B4C5002BBD35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC4BF9A21467B4C5002BBD35 /* InfoPlist.strings */; };
+		BC4BF9A61467B4C5002BBD35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF9A51467B4C5002BBD35 /* main.m */; };
+		BC4BF9AA1467B4C5002BBD35 /* HSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF9A91467B4C5002BBD35 /* HSAppDelegate.m */; };
+		BC4BF9AD1467B4C5002BBD35 /* HSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF9AC1467B4C5002BBD35 /* HSViewController.m */; };
+		BC4BF9B01467B4C5002BBD35 /* HSViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4BF9AE1467B4C5002BBD35 /* HSViewController_iPhone.xib */; };
+		BC4BF9B31467B4C5002BBD35 /* HSViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4BF9B11467B4C5002BBD35 /* HSViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BC4BF9951467B4C5002BBD35 /* HSNumericField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSNumericField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4BF9991467B4C5002BBD35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC4BF99B1467B4C5002BBD35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC4BF99D1467B4C5002BBD35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC4BF9A11467B4C5002BBD35 /* HSNumericField-Info.plist */ = {isa = PBXFileReference; path = "HSNumericField-Info.plist"; sourceTree = "<group>"; };
+		BC4BF9A31467B4C5002BBD35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC4BF9A51467B4C5002BBD35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC4BF9A71467B4C5002BBD35 /* HSNumericField-Prefix.pch */ = {isa = PBXFileReference; path = "HSNumericField-Prefix.pch"; sourceTree = "<group>"; };
+		BC4BF9A81467B4C5002BBD35 /* HSAppDelegate.h */ = {isa = PBXFileReference; path = HSAppDelegate.h; sourceTree = "<group>"; };
+		BC4BF9A91467B4C5002BBD35 /* HSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSAppDelegate.m; sourceTree = "<group>"; };
+		BC4BF9AB1467B4C5002BBD35 /* HSViewController.h */ = {isa = PBXFileReference; path = HSViewController.h; sourceTree = "<group>"; };
+		BC4BF9AC1467B4C5002BBD35 /* HSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSViewController.m; sourceTree = "<group>"; };
+		BC4BF9AF1467B4C5002BBD35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HSViewController_iPhone.xib; sourceTree = "<group>"; };
+		BC4BF9B21467B4C5002BBD35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HSViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC4BF9921467B4C4002BBD35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4BF99A1467B4C5002BBD35 /* UIKit.framework in Frameworks */,
+				BC4BF99C1467B4C5002BBD35 /* Foundation.framework in Frameworks */,
+				BC4BF99E1467B4C5002BBD35 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC4BF98A1467B4C4002BBD35 = {
+			isa = PBXGroup;
+			children = (
+				BC4BF99F1467B4C5002BBD35 /* HSNumericField */,
+				BC4BF9981467B4C5002BBD35 /* Frameworks */,
+				BC4BF9961467B4C5002BBD35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC4BF9961467B4C5002BBD35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BF9951467B4C5002BBD35 /* HSNumericField.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC4BF9981467B4C5002BBD35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BF9991467B4C5002BBD35 /* UIKit.framework */,
+				BC4BF99B1467B4C5002BBD35 /* Foundation.framework */,
+				BC4BF99D1467B4C5002BBD35 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC4BF99F1467B4C5002BBD35 /* HSNumericField */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BF9A81467B4C5002BBD35 /* HSAppDelegate.h */,
+				BC4BF9A91467B4C5002BBD35 /* HSAppDelegate.m */,
+				BC4BF9AB1467B4C5002BBD35 /* HSViewController.h */,
+				BC4BF9AC1467B4C5002BBD35 /* HSViewController.m */,
+				BC4BF9AE1467B4C5002BBD35 /* HSViewController_iPhone.xib */,
+				BC4BF9B11467B4C5002BBD35 /* HSViewController_iPad.xib */,
+				BC4BF9A01467B4C5002BBD35 /* Supporting Files */,
+			);
+			path = HSNumericField;
+			sourceTree = "<group>";
+		};
+		BC4BF9A01467B4C5002BBD35 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BF9A11467B4C5002BBD35 /* HSNumericField-Info.plist */,
+				BC4BF9A21467B4C5002BBD35 /* InfoPlist.strings */,
+				BC4BF9A51467B4C5002BBD35 /* main.m */,
+				BC4BF9A71467B4C5002BBD35 /* HSNumericField-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC4BF9941467B4C4002BBD35 /* HSNumericField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC4BF9B61467B4C5002BBD35 /* Build configuration list for PBXNativeTarget "HSNumericField" */;
+			buildPhases = (
+				BC4BF9911467B4C4002BBD35 /* Sources */,
+				BC4BF9921467B4C4002BBD35 /* Frameworks */,
+				BC4BF9931467B4C4002BBD35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSNumericField;
+			productName = HSNumericField;
+			productReference = BC4BF9951467B4C5002BBD35 /* HSNumericField.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC4BF98C1467B4C4002BBD35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Heroic Software Inc";
+			};
+			buildConfigurationList = BC4BF98F1467B4C4002BBD35 /* Build configuration list for PBXProject "HSNumericField" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BC4BF98A1467B4C4002BBD35;
+			productRefGroup = BC4BF9961467B4C5002BBD35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC4BF9941467B4C4002BBD35 /* HSNumericField */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC4BF9931467B4C4002BBD35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4BF9A41467B4C5002BBD35 /* InfoPlist.strings in Resources */,
+				BC4BF9B01467B4C5002BBD35 /* HSViewController_iPhone.xib in Resources */,
+				BC4BF9B31467B4C5002BBD35 /* HSViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC4BF9911467B4C4002BBD35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4BF9A61467B4C5002BBD35 /* main.m in Sources */,
+				BC4BF9AA1467B4C5002BBD35 /* HSAppDelegate.m in Sources */,
+				BC4BF9AD1467B4C5002BBD35 /* HSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BC4BF9A21467B4C5002BBD35 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4BF9A31467B4C5002BBD35 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BC4BF9AE1467B4C5002BBD35 /* HSViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4BF9AF1467B4C5002BBD35 /* en */,
+			);
+			name = HSViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		BC4BF9B11467B4C5002BBD35 /* HSViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4BF9B21467B4C5002BBD35 /* en */,
+			);
+			name = HSViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC4BF9B41467B4C5002BBD35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC4BF9B51467B4C5002BBD35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC4BF9B71467B4C5002BBD35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HSNumericField/HSNumericField-Prefix.pch";
+				INFOPLIST_FILE = "HSNumericField/HSNumericField-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BC4BF9B81467B4C5002BBD35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HSNumericField/HSNumericField-Prefix.pch";
+				INFOPLIST_FILE = "HSNumericField/HSNumericField-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC4BF98F1467B4C4002BBD35 /* Build configuration list for PBXProject "HSNumericField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC4BF9B41467B4C5002BBD35 /* Debug */,
+				BC4BF9B51467B4C5002BBD35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC4BF9B61467B4C5002BBD35 /* Build configuration list for PBXNativeTarget "HSNumericField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC4BF9B71467B4C5002BBD35 /* Debug */,
+				BC4BF9B81467B4C5002BBD35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC4BF98C1467B4C4002BBD35 /* Project object */;
+}
