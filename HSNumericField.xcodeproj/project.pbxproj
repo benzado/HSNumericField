@@ -65,12 +65,12 @@
 		BC29279714E4756300419C4E /* HSNumericField */ = {
 			isa = PBXGroup;
 			children = (
+				BC4BF9B91467B596002BBD35 /* HSNumericField.h */,
+				BC4BF9BA1467B596002BBD35 /* HSNumericField.m */,
 				BC29279F14E4CB9C00419C4E /* NumberPadButtonUp.png */,
 				BC29279B14E4CA9A00419C4E /* NumberPadButtonUp@2x.png */,
 				BC29279E14E4CB9C00419C4E /* NumberPadButtonDown.png */,
 				BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */,
-				BC4BF9B91467B596002BBD35 /* HSNumericField.h */,
-				BC4BF9BA1467B596002BBD35 /* HSNumericField.m */,
 			);
 			name = HSNumericField;
 			sourceTree = "<group>";

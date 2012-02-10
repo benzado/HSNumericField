@@ -6,21 +6,12 @@
 //  Copyright (c) 2011 Heroic Software Inc. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-
 #import "HSNumericField.h"
 
 
 /*
  Internal State is represented by three variables:
    isNegative, integerDigits, fractionalDigits
- */
-
-/*
- 1 2 3
- 4 5 6
- 7 8 9
- . 0 <
  */
 
 static const NSInteger kButtonValueNil = -1;
@@ -110,18 +101,6 @@ static NSString * const kButtonLabels[] = {
     return __nextResponder;
 }
 
-// MARK: UIResponder
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
-    BOOL can = [super canPerformAction:action withSender:sender];
-    NSLog(@"Can I perform %@ with %@? %@",
-          NSStringFromSelector(action),
-          sender,
-          can ? @"YES" : @"NO");
-    return can;
-}
-
 // MARK: UIInputViewAudioFeedback
 
 - (BOOL)enableInputClicksWhenVisible
@@ -135,22 +114,10 @@ static NSString * const kButtonLabels[] = {
 
 @implementation HSNumericField
 
-@synthesize label = __label;
-
 - (void)initSubviews
 {
-    // create the label
-    __label = [[UILabel alloc] initWithFrame:self.bounds];
-    __label.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
-                                UIViewAutoresizingFlexibleHeight);
-    __label.textAlignment = UITextAlignmentRight;
-    [self addSubview:__label];
-    // create the formatter
+    self.inputView = [HSNumericInputView sharedInputView];
     integerFormatter = [[NSNumberFormatter alloc] init];
-    // set up the event handler
-    [self
-     addTarget:self action:@selector(becomeFirstResponder)
-     forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -241,7 +208,7 @@ static NSString * const kButtonLabels[] = {
                              fractionalDigits];
         }
     }
-    self.label.text = displayString;
+    self.text = displayString;
 }
 
 - (void)doChangeSign
@@ -266,7 +233,7 @@ static NSString * const kButtonLabels[] = {
             fractionalDigits = nil;
         }
     } else {
-        if ([integerDigits length] > 0) {
+        if ([integerDigits length] > 1) {
             NSRange range = NSMakeRange([integerDigits length] - 1, 1);
             [integerDigits deleteCharactersInRange:range];
         } else {
@@ -338,68 +305,33 @@ static NSString * const kButtonLabels[] = {
 
 // MARK: UIResponder
 
-- (UIView *)inputView
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
-    return [HSNumericInputView sharedInputView];
-}
-
-// MARK: UIControl
-
-- (BOOL)canBecomeFirstResponder
-{
-    return self.enabled;
+    // Don't allow actions that we cannot support properly.
+    if (action == @selector(selectAll:) || action == @selector(copy:)) {
+        return [super canPerformAction:action withSender:sender];
+    } else {
+        return NO;
+    }
 }
 
 - (BOOL)becomeFirstResponder
 {
-    BOOL didBecome = [super becomeFirstResponder];
-    if (didBecome) {
-        self.selected = YES;
+    if ([super becomeFirstResponder]) {
         [[HSNumericInputView sharedInputView] setNextResponder:self];
+        return YES;
+    } else {
+        return NO;
     }
-    return didBecome;
 }
 
 - (BOOL)resignFirstResponder
 {
-    BOOL didResign = [super resignFirstResponder];
-    if (didResign) {
-        self.selected = NO;
+    if ([super resignFirstResponder]) {
         [[HSNumericInputView sharedInputView] setNextResponder:nil];
-    }
-    return didResign;
-}
-
-- (void)setSelected:(BOOL)selected
-{
-    [super setSelected:selected];
-    CALayer *layer = self.label.layer;
-    if (selected) {
-        layer.borderColor = [[UIColor blueColor] CGColor];
-        layer.borderWidth = 2;
+        return YES;
     } else {
-        layer.borderColor = nil;
-        layer.borderWidth = 0;
-    }
-}
-
-- (void)setHighlighted:(BOOL)highlighted
-{
-    [super setHighlighted:highlighted];
-    if (highlighted) {
-        self.label.backgroundColor = [UIColor yellowColor];
-    } else {
-        self.label.backgroundColor = [UIColor whiteColor];
-    }
-}
-
-- (void)setEnabled:(BOOL)enabled
-{
-    [super setEnabled:enabled];
-    if (enabled) {
-        self.label.textColor = [UIColor blackColor];
-    } else {
-        self.label.textColor = [UIColor grayColor];
+        return NO;
     }
 }
 

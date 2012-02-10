@@ -15,14 +15,13 @@
 + (HSNumericInputView *)sharedInputView;
 @end
 
-@interface HSNumericField : UIControl
+@interface HSNumericField : UITextField
 {
     BOOL isNegative;
     NSMutableString *integerDigits;
     NSMutableString *fractionalDigits;
     NSNumberFormatter *integerFormatter;
 }
-@property (nonatomic, strong, readonly) UILabel *label;
 @property (nonatomic, strong, readwrite) NSNumber *numberValue;
 @property (nonatomic) NSNumberFormatterStyle numberStyle;
 @end

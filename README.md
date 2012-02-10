@@ -10,7 +10,4 @@ The number pad only allows you to enter whole numbers. There is an undocumented 
 
 On iPad, the number pad ought to be centered in the keyboard area. Also, there should be an option for it to appear in a popover view rather than as a keyboard.
 
-The field should respond to keyboard input. I'm not sure how to do that without a UITextField.
-
-Tap-and-hold should display a Copy/Paste menu.
-
+The field should intercept keyboard input. Right now it updated the text field, but not the internal data store.
