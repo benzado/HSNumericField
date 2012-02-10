@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class HSNumericField;
+
 @interface HSViewController : UIViewController
+
+@property (nonatomic,strong) IBOutlet HSNumericField *numericField;
+@property (nonatomic,strong) IBOutlet UITextField *formatField;
+
+- (IBAction)doEndEditing:(id)sender;
+- (IBAction)doChangeFormatString:(id)sender;
 
 @end

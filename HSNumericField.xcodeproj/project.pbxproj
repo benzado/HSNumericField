@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC29279C14E4CA9A00419C4E /* NumberPadButtonDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */; };
+		BC29279D14E4CA9A00419C4E /* NumberPadButtonUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279B14E4CA9A00419C4E /* NumberPadButtonUp@2x.png */; };
+		BC2927A014E4CB9C00419C4E /* NumberPadButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279E14E4CB9C00419C4E /* NumberPadButtonDown.png */; };
+		BC2927A114E4CB9C00419C4E /* NumberPadButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279F14E4CB9C00419C4E /* NumberPadButtonUp.png */; };
 		BC4BF99A1467B4C5002BBD35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4BF9991467B4C5002BBD35 /* UIKit.framework */; };
 		BC4BF99C1467B4C5002BBD35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4BF99B1467B4C5002BBD35 /* Foundation.framework */; };
 		BC4BF99E1467B4C5002BBD35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4BF99D1467B4C5002BBD35 /* CoreGraphics.framework */; };
@@ -16,23 +20,32 @@
 		BC4BF9AD1467B4C5002BBD35 /* HSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF9AC1467B4C5002BBD35 /* HSViewController.m */; };
 		BC4BF9B01467B4C5002BBD35 /* HSViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4BF9AE1467B4C5002BBD35 /* HSViewController_iPhone.xib */; };
 		BC4BF9B31467B4C5002BBD35 /* HSViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4BF9B11467B4C5002BBD35 /* HSViewController_iPad.xib */; };
+		BC4BF9BB1467B596002BBD35 /* HSNumericField.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4BF9BA1467B596002BBD35 /* HSNumericField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC29279814E4780500419C4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BC29279914E47A3900419C4E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadButtonDown@2x.png"; sourceTree = "<group>"; };
+		BC29279B14E4CA9A00419C4E /* NumberPadButtonUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadButtonUp@2x.png"; sourceTree = "<group>"; };
+		BC29279E14E4CB9C00419C4E /* NumberPadButtonDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberPadButtonDown.png; sourceTree = "<group>"; };
+		BC29279F14E4CB9C00419C4E /* NumberPadButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberPadButtonUp.png; sourceTree = "<group>"; };
 		BC4BF9951467B4C5002BBD35 /* HSNumericField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSNumericField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4BF9991467B4C5002BBD35 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC4BF99B1467B4C5002BBD35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC4BF99D1467B4C5002BBD35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BC4BF9A11467B4C5002BBD35 /* HSNumericField-Info.plist */ = {isa = PBXFileReference; path = "HSNumericField-Info.plist"; sourceTree = "<group>"; };
+		BC4BF9A11467B4C5002BBD35 /* HSNumericField-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HSNumericField-Info.plist"; sourceTree = "<group>"; };
 		BC4BF9A31467B4C5002BBD35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BC4BF9A51467B4C5002BBD35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BC4BF9A71467B4C5002BBD35 /* HSNumericField-Prefix.pch */ = {isa = PBXFileReference; path = "HSNumericField-Prefix.pch"; sourceTree = "<group>"; };
-		BC4BF9A81467B4C5002BBD35 /* HSAppDelegate.h */ = {isa = PBXFileReference; path = HSAppDelegate.h; sourceTree = "<group>"; };
+		BC4BF9A71467B4C5002BBD35 /* HSNumericField-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HSNumericField-Prefix.pch"; sourceTree = "<group>"; };
+		BC4BF9A81467B4C5002BBD35 /* HSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSAppDelegate.h; sourceTree = "<group>"; };
 		BC4BF9A91467B4C5002BBD35 /* HSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSAppDelegate.m; sourceTree = "<group>"; };
-		BC4BF9AB1467B4C5002BBD35 /* HSViewController.h */ = {isa = PBXFileReference; path = HSViewController.h; sourceTree = "<group>"; };
+		BC4BF9AB1467B4C5002BBD35 /* HSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSViewController.h; sourceTree = "<group>"; };
 		BC4BF9AC1467B4C5002BBD35 /* HSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSViewController.m; sourceTree = "<group>"; };
 		BC4BF9AF1467B4C5002BBD35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HSViewController_iPhone.xib; sourceTree = "<group>"; };
 		BC4BF9B21467B4C5002BBD35 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HSViewController_iPad.xib; sourceTree = "<group>"; };
+		BC4BF9B91467B596002BBD35 /* HSNumericField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSNumericField.h; sourceTree = SOURCE_ROOT; };
+		BC4BF9BA1467B596002BBD35 /* HSNumericField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSNumericField.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +62,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC29279714E4756300419C4E /* HSNumericField */ = {
+			isa = PBXGroup;
+			children = (
+				BC29279F14E4CB9C00419C4E /* NumberPadButtonUp.png */,
+				BC29279B14E4CA9A00419C4E /* NumberPadButtonUp@2x.png */,
+				BC29279E14E4CB9C00419C4E /* NumberPadButtonDown.png */,
+				BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */,
+				BC4BF9B91467B596002BBD35 /* HSNumericField.h */,
+				BC4BF9BA1467B596002BBD35 /* HSNumericField.m */,
+			);
+			name = HSNumericField;
+			sourceTree = "<group>";
+		};
 		BC4BF98A1467B4C4002BBD35 = {
 			isa = PBXGroup;
 			children = (
-				BC4BF99F1467B4C5002BBD35 /* HSNumericField */,
+				BC29279814E4780500419C4E /* README.md */,
+				BC29279914E47A3900419C4E /* LICENSE */,
+				BC29279714E4756300419C4E /* HSNumericField */,
+				BC4BF99F1467B4C5002BBD35 /* Application */,
 				BC4BF9981467B4C5002BBD35 /* Frameworks */,
 				BC4BF9961467B4C5002BBD35 /* Products */,
 			);
@@ -76,7 +105,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC4BF99F1467B4C5002BBD35 /* HSNumericField */ = {
+		BC4BF99F1467B4C5002BBD35 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				BC4BF9A81467B4C5002BBD35 /* HSAppDelegate.h */,
@@ -87,6 +116,7 @@
 				BC4BF9B11467B4C5002BBD35 /* HSViewController_iPad.xib */,
 				BC4BF9A01467B4C5002BBD35 /* Supporting Files */,
 			);
+			name = Application;
 			path = HSNumericField;
 			sourceTree = "<group>";
 		};
@@ -155,6 +185,10 @@
 				BC4BF9A41467B4C5002BBD35 /* InfoPlist.strings in Resources */,
 				BC4BF9B01467B4C5002BBD35 /* HSViewController_iPhone.xib in Resources */,
 				BC4BF9B31467B4C5002BBD35 /* HSViewController_iPad.xib in Resources */,
+				BC29279C14E4CA9A00419C4E /* NumberPadButtonDown@2x.png in Resources */,
+				BC29279D14E4CA9A00419C4E /* NumberPadButtonUp@2x.png in Resources */,
+				BC2927A014E4CB9C00419C4E /* NumberPadButtonDown.png in Resources */,
+				BC2927A114E4CB9C00419C4E /* NumberPadButtonUp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +202,7 @@
 				BC4BF9A61467B4C5002BBD35 /* main.m in Sources */,
 				BC4BF9AA1467B4C5002BBD35 /* HSAppDelegate.m in Sources */,
 				BC4BF9AD1467B4C5002BBD35 /* HSViewController.m in Sources */,
+				BC4BF9BB1467B596002BBD35 /* HSNumericField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +289,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HSNumericField/HSNumericField-Prefix.pch";
 				INFOPLIST_FILE = "HSNumericField/HSNumericField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -265,6 +301,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HSNumericField/HSNumericField-Prefix.pch";
 				INFOPLIST_FILE = "HSNumericField/HSNumericField-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,6 +326,7 @@
 				BC4BF9B81467B4C5002BBD35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,13 +7,21 @@
 //
 
 #import "HSViewController.h"
+#import "HSNumericField.h"
 
 @implementation HSViewController
 
-- (void)didReceiveMemoryWarning
+@synthesize numericField;
+@synthesize formatField;
+
+- (IBAction)doEndEditing:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    [self.view endEditing:YES];
+}
+
+- (IBAction)doChangeFormatString:(id)sender
+{
+    //[self.numericField.formatter setPositiveFormat:self.formatField.text];
 }
 
 #pragma mark - View lifecycle
