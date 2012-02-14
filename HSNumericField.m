@@ -14,24 +14,40 @@
    isNegative, integerDigits, fractionalDigits
  */
 
-static const NSInteger kButtonValueNil = -1;
+static const int kButtonCount = 13;
 static const NSInteger kButtonValueChangeSign = 10;
 static const NSInteger kButtonValueDecimalPoint = 11;
 static const NSInteger kButtonValueDelete = 12;
-static const NSInteger kButtonValueClear = 13;
 
 static const NSInteger kButtonValues[] = {
-    1, 2, 3, kButtonValueClear,
-    4, 5, 6, kButtonValueNil,
-    7, 8, 9, kButtonValueNil,
-    kButtonValueDecimalPoint, 0, kButtonValueChangeSign, kButtonValueDelete
+    1, 2, 3,
+    4, 5, 6,
+    7, 8, 9,
+    kButtonValueChangeSign, kButtonValueDecimalPoint, 0, kButtonValueDelete
 };
+
 static NSString * const kButtonLabels[] = {
-    @"1", @"2", @"3", @"\xE2\x8A\x97",
-    @"4", @"5", @"6", nil,
-    @"7", @"8", @"9", nil,
-    @".", @"0", @"\xC2\xB1", @"\xE2\x8C\xAB",
+    @"1", @"2", @"3",
+    @"4", @"5", @"6",
+    @"7", @"8", @"9",
+    @"NumberPadPlusMinus", @".", @"0", @"NumberPadDelete",
 };
+
+static const CGRect kInputViewFrame = { 0, 0, 320, 216 };
+
+static const CGRect kButtonFrames[] = {
+    { 1,  1, 105,53 }, { 107,  1, 106,53 }, { 214,  1, 105,53 },
+    { 1, 55, 105,53 }, { 107, 55, 106,53 }, { 214, 55, 105,53 },
+    { 1,109, 105,53 }, { 107,109, 106,53 }, { 214,109, 105,53 },
+    { 1,163, 52,53 },
+    { 54,163, 52,53 }, { 107,163, 106,53 }, { 214,163, 105,53 }
+};
+
+/*
+    320px = 1px + 105px + 1px + 106px + 1px + 105px + 1px
+    320px = 1px + 105px + 1px + 106px + 1px + 52px + 1px + 52px + 1px
+    216px = 1px + 53px + 1px + 53px + 1px + 53px + 1px + 53px + 1px
+ */
 
 
 @implementation HSNumericInputView
@@ -41,25 +57,39 @@ static NSString * const kButtonLabels[] = {
     static HSNumericInputView *view = nil;
     
     if (view == nil) {
-        view = [[HSNumericInputView alloc] initWithFrame:CGRectMake(0, 0, 320, 216)];
+        view = [[HSNumericInputView alloc] initWithFrame:kInputViewFrame];
     }
     return view;
 }
 
 - (UIButton *)createButtonForIndex:(int)buttonIndex
 {
-    NSInteger value = kButtonValues[buttonIndex];
-    if (value == kButtonValueNil) return nil;
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.tag = value;
-    btn.titleLabel.font = [UIFont boldSystemFontOfSize:36];
-    btn.titleLabel.shadowOffset = CGSizeMake(0, 1);
-    [btn setTitle:kButtonLabels[buttonIndex] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-    [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:@"NumberPadButtonUp"] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:@"NumberPadButtonDown"] forState:UIControlStateHighlighted];
+    btn.frame = kButtonFrames[buttonIndex];
+    btn.tag = kButtonValues[buttonIndex];
+    NSString *title = kButtonLabels[buttonIndex];
+    if ([title length] == 1) {
+        UIColor *shadowColor = [UIColor colorWithRed:0.357 green:0.373 blue:0.400 alpha:1.000];
+        btn.titleLabel.font = [UIFont boldSystemFontOfSize:36];
+        btn.titleLabel.shadowOffset = CGSizeMake(0, -1);
+        btn.reversesTitleShadowWhenHighlighted = YES;
+        [btn setTitle:title forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleShadowColor:shadowColor forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        [btn setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    } else {
+        NSString *titleUp = [title stringByAppendingString:@"Up"];
+        [btn setImage:[UIImage imageNamed:titleUp] forState:UIControlStateNormal];
+        NSString *titleDown = [title stringByAppendingString:@"Down"];
+        [btn setImage:[UIImage imageNamed:titleDown] forState:UIControlStateHighlighted];
+    }
+    [btn
+     setBackgroundImage:[UIImage imageNamed:@"NumberPadButtonUp"]
+     forState:UIControlStateNormal];
+    [btn
+     setBackgroundImage:[UIImage imageNamed:@"NumberPadButtonDown"]
+     forState:UIControlStateHighlighted];
     [btn
      addTarget:[UIDevice currentDevice] action:@selector(playInputClick)
      forControlEvents:UIControlEventTouchDown];
@@ -72,20 +102,9 @@ static NSString * const kButtonLabels[] = {
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor darkGrayColor];
-        CGRect btnFrame = CGRectMake(0, 0, 80, 54);
-        for (int btnIdx = 0; btnIdx < 16; btnIdx++) {
-            UIButton *btn = [self createButtonForIndex:btnIdx];
-            if (btn) {
-                [btn setFrame:btnFrame];
-                [self addSubview:btn];
-            }
-            if (btnIdx % 4 < 3) {
-                btnFrame.origin.x += btnFrame.size.width;
-            } else {
-                btnFrame.origin.x = 0;
-                btnFrame.origin.y += btnFrame.size.height;
-            }
+        self.backgroundColor = [UIColor colorWithRed:0.25f green:0.25f blue:0.25f alpha:1];
+        for (int btnIdx = 0; btnIdx < kButtonCount; btnIdx++) {
+            [self addSubview:[self createButtonForIndex:btnIdx]];
         }
     }
     return self;
@@ -108,6 +127,13 @@ static NSString * const kButtonLabels[] = {
     return YES;
 }
 
+// MARK: UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    return NO;
+}
+
 @end
 
 // MARK: -
@@ -117,6 +143,9 @@ static NSString * const kButtonLabels[] = {
 - (void)initSubviews
 {
     self.inputView = [HSNumericInputView sharedInputView];
+    if (self.delegate == nil) {
+        self.delegate = [HSNumericInputView sharedInputView];
+    }
     integerFormatter = [[NSNumberFormatter alloc] init];
 }
 
@@ -218,6 +247,9 @@ static NSString * const kButtonLabels[] = {
 
 - (void)doInsertDecimalPoint
 {
+    if (integerDigits == nil) {
+        integerDigits = [NSMutableString string];
+    }
     if (fractionalDigits == nil) {
         fractionalDigits = [NSMutableString string];
     }
@@ -288,9 +320,6 @@ static NSString * const kButtonLabels[] = {
             break;
         case kButtonValueDelete:
             [self doDelete];
-            break;
-        case kButtonValueClear:
-            [self doClear];
             break;
         case 0:
             [self doInsertZero];

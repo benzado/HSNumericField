@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HSNumericInputView : UIView <UIInputViewAudioFeedback>
+@interface HSNumericInputView : UIView <UIInputViewAudioFeedback, UITextFieldDelegate>
 {
     UIResponder *__nextResponder;
 }

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC206F9114EA41290062BA67 /* NumberPadPlusMinusDown.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F8D14EA41290062BA67 /* NumberPadPlusMinusDown.png */; };
+		BC206F9214EA41290062BA67 /* NumberPadPlusMinusDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F8E14EA41290062BA67 /* NumberPadPlusMinusDown@2x.png */; };
+		BC206F9314EA41290062BA67 /* NumberPadPlusMinusUp.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F8F14EA41290062BA67 /* NumberPadPlusMinusUp.png */; };
+		BC206F9414EA41290062BA67 /* NumberPadPlusMinusUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F9014EA41290062BA67 /* NumberPadPlusMinusUp@2x.png */; };
+		BC206F9A14EA53990062BA67 /* NumberPadDeleteDown.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F9614EA53980062BA67 /* NumberPadDeleteDown.png */; };
+		BC206F9B14EA53990062BA67 /* NumberPadDeleteDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F9714EA53990062BA67 /* NumberPadDeleteDown@2x.png */; };
+		BC206F9C14EA53990062BA67 /* NumberPadDeleteUp.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F9814EA53990062BA67 /* NumberPadDeleteUp.png */; };
+		BC206F9D14EA53990062BA67 /* NumberPadDeleteUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC206F9914EA53990062BA67 /* NumberPadDeleteUp@2x.png */; };
 		BC29279C14E4CA9A00419C4E /* NumberPadButtonDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */; };
 		BC29279D14E4CA9A00419C4E /* NumberPadButtonUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279B14E4CA9A00419C4E /* NumberPadButtonUp@2x.png */; };
 		BC2927A014E4CB9C00419C4E /* NumberPadButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = BC29279E14E4CB9C00419C4E /* NumberPadButtonDown.png */; };
@@ -24,6 +32,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC206F8D14EA41290062BA67 /* NumberPadPlusMinusDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberPadPlusMinusDown.png; sourceTree = "<group>"; };
+		BC206F8E14EA41290062BA67 /* NumberPadPlusMinusDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadPlusMinusDown@2x.png"; sourceTree = "<group>"; };
+		BC206F8F14EA41290062BA67 /* NumberPadPlusMinusUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberPadPlusMinusUp.png; sourceTree = "<group>"; };
+		BC206F9014EA41290062BA67 /* NumberPadPlusMinusUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadPlusMinusUp@2x.png"; sourceTree = "<group>"; };
+		BC206F9614EA53980062BA67 /* NumberPadDeleteDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberPadDeleteDown.png; sourceTree = "<group>"; };
+		BC206F9714EA53990062BA67 /* NumberPadDeleteDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadDeleteDown@2x.png"; sourceTree = "<group>"; };
+		BC206F9814EA53990062BA67 /* NumberPadDeleteUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NumberPadDeleteUp.png; sourceTree = "<group>"; };
+		BC206F9914EA53990062BA67 /* NumberPadDeleteUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadDeleteUp@2x.png"; sourceTree = "<group>"; };
 		BC29279814E4780500419C4E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		BC29279914E47A3900419C4E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NumberPadButtonDown@2x.png"; sourceTree = "<group>"; };
@@ -70,7 +86,15 @@
 				BC29279F14E4CB9C00419C4E /* NumberPadButtonUp.png */,
 				BC29279B14E4CA9A00419C4E /* NumberPadButtonUp@2x.png */,
 				BC29279E14E4CB9C00419C4E /* NumberPadButtonDown.png */,
+				BC206F9614EA53980062BA67 /* NumberPadDeleteDown.png */,
+				BC206F9714EA53990062BA67 /* NumberPadDeleteDown@2x.png */,
+				BC206F9814EA53990062BA67 /* NumberPadDeleteUp.png */,
+				BC206F9914EA53990062BA67 /* NumberPadDeleteUp@2x.png */,
 				BC29279A14E4CA9A00419C4E /* NumberPadButtonDown@2x.png */,
+				BC206F8D14EA41290062BA67 /* NumberPadPlusMinusDown.png */,
+				BC206F8E14EA41290062BA67 /* NumberPadPlusMinusDown@2x.png */,
+				BC206F8F14EA41290062BA67 /* NumberPadPlusMinusUp.png */,
+				BC206F9014EA41290062BA67 /* NumberPadPlusMinusUp@2x.png */,
 			);
 			name = HSNumericField;
 			sourceTree = "<group>";
@@ -189,6 +213,14 @@
 				BC29279D14E4CA9A00419C4E /* NumberPadButtonUp@2x.png in Resources */,
 				BC2927A014E4CB9C00419C4E /* NumberPadButtonDown.png in Resources */,
 				BC2927A114E4CB9C00419C4E /* NumberPadButtonUp.png in Resources */,
+				BC206F9114EA41290062BA67 /* NumberPadPlusMinusDown.png in Resources */,
+				BC206F9214EA41290062BA67 /* NumberPadPlusMinusDown@2x.png in Resources */,
+				BC206F9314EA41290062BA67 /* NumberPadPlusMinusUp.png in Resources */,
+				BC206F9414EA41290062BA67 /* NumberPadPlusMinusUp@2x.png in Resources */,
+				BC206F9A14EA53990062BA67 /* NumberPadDeleteDown.png in Resources */,
+				BC206F9B14EA53990062BA67 /* NumberPadDeleteDown@2x.png in Resources */,
+				BC206F9C14EA53990062BA67 /* NumberPadDeleteUp.png in Resources */,
+				BC206F9D14EA53990062BA67 /* NumberPadDeleteUp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
