@@ -78,6 +78,9 @@ static const CGRect kButtonFrames[] = {
     btn.tag = kButtonValues[buttonIndex];
     NSString *title = kButtonLabels[buttonIndex];
     if ([title length] == 1) {
+        if ([title isEqualToString:@"."]) {
+            title = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
+        }
         UIColor *shadowColor = [UIColor colorWithRed:0.357 green:0.373 blue:0.400 alpha:1.000];
         btn.titleLabel.font = [UIFont boldSystemFontOfSize:36];
         btn.titleLabel.shadowOffset = CGSizeMake(0, -1);
