@@ -185,7 +185,6 @@ static const CGRect kButtonFrames[] = {
     if (self.delegate == nil) {
         self.delegate = [HSNumericInputView sharedInputView];
     }
-    integerFormatter = [[NSNumberFormatter alloc] init];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -207,11 +206,6 @@ static const CGRect kButtonFrames[] = {
 - (void)dealloc
 {
     [[HSNumericInputView sharedInputView] resignActiveField:self];
-}
-
-- (NSString *)text
-{
-    return [[self numberValue] description];
 }
 
 - (void)setText:(NSString *)text
@@ -247,8 +241,7 @@ static const CGRect kButtonFrames[] = {
         [self updateLabel];
         return;
     }
-    // TODO: ensure "%F" NEVER returns a string in scientific notation
-    NSString *digits = [numberValue description];
+    NSString *digits = [numberValue descriptionWithLocale:nil];
     NSCharacterSet *digitSet = [NSCharacterSet decimalDigitCharacterSet];
     NSScanner *scanner = [NSScanner scannerWithString:digits];
     isNegative = [scanner scanString:@"-" intoString:nil];
@@ -268,33 +261,25 @@ static const CGRect kButtonFrames[] = {
     [self updateLabel];
 }
 
-- (NSNumberFormatterStyle)numberStyle
-{
-    return [integerFormatter numberStyle];
-}
-
-- (void)setNumberStyle:(NSNumberFormatterStyle)numberStyle
-{
-    [integerFormatter setNumberStyle:numberStyle];
-}
-
 // MARK: Private Methods
 
 - (void)updateLabel
 {
-    NSString *displayString;
-    if (integerDigits == nil) {
-        displayString = @"";
-    } else {
-        double sign = isNegative ? -1.0 : 1.0;
-        double integerPart = sign * [integerDigits doubleValue];
-        displayString = [integerFormatter stringFromNumber:
-                         [NSNumber numberWithDouble:integerPart]];
+    NSUInteger len = 1 + [integerDigits length] + 1 + [fractionalDigits length];
+    NSMutableString *displayString = [NSMutableString stringWithCapacity:len];
+    if (integerDigits != nil) {
+        if (isNegative) {
+            [displayString appendString:@"-"];
+        }
+        if ([integerDigits length] == 0) {
+            [displayString appendString:@"0"];
+        } else {
+            [displayString appendString:integerDigits];
+        }
         if (fractionalDigits) {
-            displayString = [NSString stringWithFormat:@"%@%@%@",
-                             displayString,
-                             [integerFormatter decimalSeparator],
-                             fractionalDigits];
+            [displayString appendString:[[NSLocale currentLocale]
+                                         objectForKey:NSLocaleDecimalSeparator]];
+            [displayString appendString:fractionalDigits];
         }
     }
     [super setText:displayString];

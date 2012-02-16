@@ -13,10 +13,8 @@
     BOOL isNegative;
     NSMutableString *integerDigits;
     NSMutableString *fractionalDigits;
-    NSNumberFormatter *integerFormatter;
 }
 @property (nonatomic, strong, readwrite) NSNumber *numberValue;
-@property (nonatomic) NSNumberFormatterStyle numberStyle;
 @end
 
 @interface HSNumericInputView : UIView <UIInputViewAudioFeedback, UITextFieldDelegate>
