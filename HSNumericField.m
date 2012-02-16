@@ -49,6 +49,15 @@ static const CGRect kButtonFrames[] = {
     216px = 1px + 53px + 1px + 53px + 1px + 53px + 1px + 53px + 1px
  */
 
+@interface HSNumericField ()
+- (void)updateLabel;
+- (void)doChangeSign;
+- (void)doInsertDecimalPoint;
+- (void)doDelete;
+- (void)doClear;
+- (void)doInsertZero;
+- (void)doInsertDigit:(NSUInteger)digit;
+@end
 
 @implementation HSNumericInputView
 
@@ -110,14 +119,32 @@ static const CGRect kButtonFrames[] = {
     return self;
 }
 
-- (void)setNextResponder:(UIResponder *)responder
+- (void)setActiveField:(HSNumericField *)field
 {
-    __nextResponder = responder;
+    activeField = field;
 }
 
-- (UIResponder *)nextResponder
+- (void)numericInputViewButtonTouchUpInside:(id)sender
 {
-    return __nextResponder;
+    switch ([sender tag]) {
+        case kButtonValueChangeSign:
+            [activeField doChangeSign];
+            break;
+        case kButtonValueDecimalPoint:
+            [activeField doInsertDecimalPoint];
+            break;
+        case kButtonValueDelete:
+            [activeField doDelete];
+            break;
+        case 0:
+            [activeField doInsertZero];
+            break;
+        default:
+            [activeField doInsertDigit:[sender tag]];
+            break;
+    }
+    [activeField updateLabel];
+    [activeField sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 // MARK: UIInputViewAudioFeedback
@@ -309,29 +336,6 @@ static const CGRect kButtonFrames[] = {
     }
 }
 
-- (void)numericInputViewButtonTouchUpInside:(id)sender
-{
-    switch ([sender tag]) {
-        case kButtonValueChangeSign:
-            [self doChangeSign];
-            break;
-        case kButtonValueDecimalPoint:
-            [self doInsertDecimalPoint];
-            break;
-        case kButtonValueDelete:
-            [self doDelete];
-            break;
-        case 0:
-            [self doInsertZero];
-            break;
-        default:
-            [self doInsertDigit:[sender tag]];
-            break;
-    }
-    [self updateLabel];
-    [self sendActionsForControlEvents:UIControlEventValueChanged];
-}
-
 // MARK: UIResponder
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
@@ -347,7 +351,7 @@ static const CGRect kButtonFrames[] = {
 - (BOOL)becomeFirstResponder
 {
     if ([super becomeFirstResponder]) {
-        [[HSNumericInputView sharedInputView] setNextResponder:self];
+        [[HSNumericInputView sharedInputView] setActiveField:self];
         return YES;
     } else {
         return NO;
@@ -357,7 +361,7 @@ static const CGRect kButtonFrames[] = {
 - (BOOL)resignFirstResponder
 {
     if ([super resignFirstResponder]) {
-        [[HSNumericInputView sharedInputView] setNextResponder:nil];
+        [[HSNumericInputView sharedInputView] setActiveField:nil];
         return YES;
     } else {
         return NO;

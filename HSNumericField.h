@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HSNumericInputView : UIView <UIInputViewAudioFeedback, UITextFieldDelegate>
-{
-    UIResponder *__nextResponder;
-}
-+ (HSNumericInputView *)sharedInputView;
-@end
-
 @interface HSNumericField : UITextField
 {
     BOOL isNegative;
@@ -25,3 +18,11 @@
 @property (nonatomic, strong, readwrite) NSNumber *numberValue;
 @property (nonatomic) NSNumberFormatterStyle numberStyle;
 @end
+
+@interface HSNumericInputView : UIView <UIInputViewAudioFeedback, UITextFieldDelegate>
+{
+    __unsafe_unretained HSNumericField *activeField;
+}
++ (HSNumericInputView *)sharedInputView;
+@end
+
