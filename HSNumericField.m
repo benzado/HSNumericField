@@ -241,7 +241,7 @@ static const CGRect kButtonFrames[] = {
         [self updateLabel];
         return;
     }
-    NSString *digits = [numberValue descriptionWithLocale:nil];
+    NSString *digits = [NSString stringWithFormat:@"%.6f", [numberValue doubleValue]];
     NSCharacterSet *digitSet = [NSCharacterSet decimalDigitCharacterSet];
     NSScanner *scanner = [NSScanner scannerWithString:digits];
     isNegative = [scanner scanString:@"-" intoString:nil];
@@ -253,7 +253,16 @@ static const CGRect kButtonFrames[] = {
     }
     if ([scanner scanString:@"." intoString:nil] &&
         [scanner scanCharactersFromSet:digitSet intoString:&part]) {
-        fractionalDigits = [part mutableCopy];
+        // Don't copy any trailing zeroes.
+        NSUInteger len = [part length];
+        while (len > 0 && [part characterAtIndex:(len - 1)] == '0') {
+            len -= 1;
+        }
+        if (len > 0) {
+            fractionalDigits = [[part substringToIndex:len] mutableCopy];
+        } else {
+            fractionalDigits = nil;
+        }
     } else {
         fractionalDigits = nil;
     }
