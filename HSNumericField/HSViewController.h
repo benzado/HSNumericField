@@ -13,9 +13,10 @@
 @interface HSViewController : UIViewController
 
 @property (nonatomic,strong) IBOutlet HSNumericField *numericField;
-@property (nonatomic,strong) IBOutlet UITextField *formatField;
+@property (nonatomic,strong) IBOutlet UILabel *textLabel;
+@property (nonatomic,strong) IBOutlet UILabel *numberLabel;
 
 - (IBAction)doEndEditing:(id)sender;
-- (IBAction)doChangeFormatString:(id)sender;
+- (IBAction)numericValueChanged:(HSNumericField *)sender;
 
 @end

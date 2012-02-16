@@ -12,16 +12,18 @@
 @implementation HSViewController
 
 @synthesize numericField;
-@synthesize formatField;
+@synthesize textLabel;
+@synthesize numberLabel;
 
 - (IBAction)doEndEditing:(id)sender
 {
     [self.view endEditing:YES];
 }
 
-- (IBAction)doChangeFormatString:(id)sender
+- (IBAction)numericValueChanged:(HSNumericField *)sender
 {
-    //[self.numericField.formatter setPositiveFormat:self.formatField.text];
+    self.textLabel.text = sender.text;
+    self.numberLabel.text = [sender.numberValue description];
 }
 
 #pragma mark - View lifecycle
