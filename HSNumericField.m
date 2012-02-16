@@ -173,6 +173,10 @@ static const CGRect kButtonFrames[] = {
 
 // MARK: -
 
+@interface HSNumericField ()
+- (void)updateLabel;
+@end
+
 @implementation HSNumericField
 
 - (void)initSubviews
@@ -205,6 +209,20 @@ static const CGRect kButtonFrames[] = {
     [[HSNumericInputView sharedInputView] resignActiveField:self];
 }
 
+- (NSString *)text
+{
+    return [[self numberValue] description];
+}
+
+- (void)setText:(NSString *)text
+{
+    if ([text length]) {
+        [self setNumberValue:[NSNumber numberWithDouble:[text doubleValue]]];
+    } else {
+        [self setNumberValue:nil];
+    }
+}
+
 - (NSNumber *)numberValue
 {
     if (integerDigits == nil) return nil;
@@ -226,10 +244,11 @@ static const CGRect kButtonFrames[] = {
         isNegative = NO;
         integerDigits = nil;
         fractionalDigits = nil;
+        [self updateLabel];
+        return;
     }
     // TODO: ensure "%F" NEVER returns a string in scientific notation
-    NSString *digits = [NSString stringWithFormat:@"%F",
-                        [numberValue doubleValue]];
+    NSString *digits = [numberValue description];
     NSCharacterSet *digitSet = [NSCharacterSet decimalDigitCharacterSet];
     NSScanner *scanner = [NSScanner scannerWithString:digits];
     isNegative = [scanner scanString:@"-" intoString:nil];
@@ -246,6 +265,7 @@ static const CGRect kButtonFrames[] = {
         fractionalDigits = nil;
     }
     NSAssert1([scanner isAtEnd], @"Leftover Digits! '%@'", digits);
+    [self updateLabel];
 }
 
 - (NSNumberFormatterStyle)numberStyle
@@ -277,7 +297,7 @@ static const CGRect kButtonFrames[] = {
                              fractionalDigits];
         }
     }
-    self.text = displayString;
+    [super setText:displayString];
 }
 
 - (void)doChangeSign
