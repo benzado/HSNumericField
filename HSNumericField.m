@@ -119,9 +119,14 @@ static const CGRect kButtonFrames[] = {
     return self;
 }
 
-- (void)setActiveField:(HSNumericField *)field
+- (void)becomeActiveField:(HSNumericField *)field
 {
     activeField = field;
+}
+
+- (void)resignActiveField:(HSNumericField *)field
+{
+    if (activeField == field) activeField = nil;
 }
 
 - (void)numericInputViewButtonTouchUpInside:(id)sender
@@ -190,6 +195,11 @@ static const CGRect kButtonFrames[] = {
         [self initSubviews];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[HSNumericInputView sharedInputView] resignActiveField:self];
 }
 
 - (NSNumber *)numberValue
@@ -351,7 +361,7 @@ static const CGRect kButtonFrames[] = {
 - (BOOL)becomeFirstResponder
 {
     if ([super becomeFirstResponder]) {
-        [[HSNumericInputView sharedInputView] setActiveField:self];
+        [[HSNumericInputView sharedInputView] becomeActiveField:self];
         return YES;
     } else {
         return NO;
@@ -361,7 +371,7 @@ static const CGRect kButtonFrames[] = {
 - (BOOL)resignFirstResponder
 {
     if ([super resignFirstResponder]) {
-        [[HSNumericInputView sharedInputView] setActiveField:nil];
+        [[HSNumericInputView sharedInputView] resignActiveField:self];
         return YES;
     } else {
         return NO;
