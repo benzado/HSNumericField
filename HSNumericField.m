@@ -33,6 +33,13 @@ static NSString * const kButtonLabels[] = {
     @"NumberPadPlusMinus", @".", @"0", @"NumberPadDelete",
 };
 
+static NSString * const kButtonAccessibilityLabels[] = {
+    @"1", @"2", @"3",
+    @"4", @"5", @"6",
+    @"7", @"8", @"9",
+    @"Plus or minus", @"Decimal point", @"0", @"Delete",
+};
+
 static const CGRect kInputViewFrame = { 0, 0, 320, 216 };
 
 static const CGRect kButtonFrames[] = {
@@ -96,6 +103,8 @@ static const CGRect kButtonFrames[] = {
         NSString *titleDown = [title stringByAppendingString:@"Down"];
         [btn setImage:[UIImage imageNamed:titleDown] forState:UIControlStateHighlighted];
     }
+    NSString *label = kButtonAccessibilityLabels[buttonIndex];
+    [btn setAccessibilityLabel:label];
     [btn
      setBackgroundImage:[UIImage imageNamed:@"NumberPadButtonUp"]
      forState:UIControlStateNormal];
